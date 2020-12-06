@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <bean id="user" class="com.jsg.examples.spring.entity.User">
+        <!--set方法属性注入（即DI依赖注入）-->
+        <property name="username" value="张三"></property>
+        <property name="password" value="1234"></property>
+        <!--构造方法注入-->
+        <!--<constructor-arg name="username" value="username"></constructor-arg>-->
+        <property name="book" ref="book"></property>
+    </bean>
+    <bean id="book" class="com.jsg.examples.spring.entity.Book"></bean>
+
+
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+        <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" ></property>
+        <property name="username" value="HIS"></property>
+        <property name="password" value="1"></property>
+    </bean>
+
+    <!--引入外部属性文件-->
+    <context:property-placeholder location="classpath*:spring/jdbc.properties"></context:property-placeholder>
+
+
+
+    <!--开启注解扫描-->
+    <context:component-scan base-package="com.jsg.examples.spring">
+        <!--只扫描带@Controller类-->
+        <!--<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+        <!--不扫描带@Service的类-->
+       <!-- <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
+    </context:component-scan>
+
+
+    <!--开启Aspect生成代理对象(aop使用)-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsg.examples.dao.RybmDao">
+
+        <!--查询人员信息-->
+    <select id="queryRybm" parameterType="string" resultType="com.jsg.examples.entity.RybmEntity" >
+        select * from gyb_rybm where  rybm like '%'||#{str}||'%' or ryxm like '%'||#{str}||'%'
+    </select>
+
+
+        <!--插入人员信息-->
+        <insert id="insertRybm" parameterType="com.jsg.examples.entity.RybmEntity">
+         insert into a_rybm(id,rybm,ryxm) values(sys_guid(),#{rybm},#{ryxm})
+        </insert>
+
+</mapper>
