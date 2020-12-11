@@ -33,7 +33,7 @@ public class RybmController<T> {
             return new CommonResult(200, "成功", result);
         }
         else {
-            return (new CommonResult(200, "失败", null));
+            return (new CommonResult(444, "失败", null));
         }
     }
 

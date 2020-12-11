@@ -1,0 +1,23 @@
+用户:MSG
+密码:1
+
+--表一：menulist（系统模块）
+create table menulist(
+mkbm1 VARCHAR2(20) not null,
+mkmc1 varchar2(20) not null,
+icon varchar2(50) ,
+mkbm2 VARCHAR2(20),
+mkmc2 varchar2(20),
+types varchar2(10)
+)
+
+comment on table menulist is '系统模块';
+COMMENT ON COLUMN menulist.mkbm1 IS '一级模块编码';
+COMMENT ON COLUMN menulist.mkmc1 IS '一级模块名称';
+COMMENT ON COLUMN menulist.icon IS '一级模块图标';
+COMMENT ON COLUMN menulist.mkbm2 IS '二级模块编码';
+COMMENT ON COLUMN menulist.mkmc2 IS '二级级模块名称';
+COMMENT ON COLUMN menulist.types IS 'types(1代表所属级别为一级模块，2代表所属级别为2级模块)';
+
+
+表二：

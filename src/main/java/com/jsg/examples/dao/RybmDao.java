@@ -11,5 +11,6 @@ import java.util.List;
 @Repository
 public interface RybmDao {
      List<RybmEntity> queryRybm(@Param("str") String str);
+     List<RybmEntity> logindao(@Param("username") String username,@Param("password") String password);
      int insertRybm(RybmEntity rybmEntity);
 }

@@ -13,6 +13,11 @@ public class Test02 {
             System.out.println(str2);
         }
 
+        for(int i=0;i<str.size();i++)
+        {
+            System.out.println("i="+i);
+        }
+
         String uuid = UUID.randomUUID().toString().replaceAll("-","");
         System.out.println(uuid);
     }

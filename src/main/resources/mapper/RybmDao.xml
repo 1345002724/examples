@@ -5,6 +5,7 @@
         <!--查询人员信息-->
     <select id="queryRybm" parameterType="string" resultType="com.jsg.examples.entity.RybmEntity" >
         select * from gyb_rybm where  rybm like '%'||#{str}||'%' or ryxm like '%'||#{str}||'%'
+
     </select>
 
 
@@ -12,5 +13,10 @@
         <insert id="insertRybm" parameterType="com.jsg.examples.entity.RybmEntity">
          insert into a_rybm(id,rybm,ryxm) values(sys_guid(),#{rybm},#{ryxm})
         </insert>
+
+    <select id="logindao"  resultType="com.jsg.examples.entity.RybmEntity" >
+        select * from gyb_rybm where  1=1 and rybm=#{username} and password=#{password}
+
+    </select>
 
 </mapper>
