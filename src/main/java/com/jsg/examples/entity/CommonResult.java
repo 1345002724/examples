@@ -1,5 +1,6 @@
 package com.jsg.examples.entity;
 
+
 /**
  * 返回
  * @param <T>
@@ -15,6 +16,8 @@ public class CommonResult<T> {
         this.message=message1;
         this.data=data1;
     }
+
+
 
     public CommonResult() {
     }
@@ -43,4 +46,6 @@ public class CommonResult<T> {
     public void setData(T data) {
         this.data = data;
     }
+
+
 }

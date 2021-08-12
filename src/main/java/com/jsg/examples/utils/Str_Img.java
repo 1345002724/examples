@@ -72,13 +72,13 @@ public class Str_Img {
     public static void main(String[] args) {
 
         //图片转字符串
-        String imageStr = getImageStr("D:\\001.jpg");
-        System.out.println(imageStr);
+/*        String imageStr = getImageStr("D:\\001.jpg");
+        System.out.println(imageStr);*/
 
 
         //字符串转图片
-       // String imageStr="iVBORw0KGgoAAAANSUhEUgAAAH8AAAB/CAIAAABJ34pEAAADD0lEQVR42u3dS3LCMBBFUfa/aTLMIBWQ+91ugXU9JGDko5TUH6XyeHrtux4S7Nd/ZNfv7f688uq7Fz6+csNL73kx+NrAEjH11Vd/Xa2GtfIA4TTUZmhlGNR41Fdf/df6k6s8/tgri3u4/SBi6quvPqJPPTYeudaeK9zG1Fdf/V3rPrXyTm4J6quv/i79MIEMq1G1+4S5bqi/v9Kgvvpfq4/X92//ykd3V9RX/7P1sSZ9VjjDy/p9CTZ5pkF99U/VD7HColhfaY8aWFMIq776h+vjNayBZboW/PV9O7Drqq/+YfpUOFibPLyav+VHhZlWX331m4LIMDHeYoS3Geo1TvXVP0O/lrlRw8Xz2HCEVAz63w3VV1/9sar3QIeSXZ2v6q+/WX311Ufq+1RVKzxRgZ+Cwgv96quv/rPzz0jCvh0VMvYFrMmzq6+++oVACs82qUpcOOXhV9Tr++qrf5g+G0iBSS/+qck7v72P+uofro9HePgmMZDHhttPYczqq3+4fl8RqtZi/Ng8lj3qob766iNqVFegL4ikknkkDVZfffXZulLoSJ1notLpMAYlI0711b+j/gB6aI2Eeh2fqncW1Vf/VH3qXFRY+qfakHi7gjrd9eY0lfrqq59FVHjSS83rlu6C+uqrv1jnCUeQZIB5jY/akPBfgtVKg/rqn6E/cByq1hGkEmOq0M+eylJf/cP18WpU7QgCvqNQ9Ttq17nc11Vf/VvrhwEZBUH1//pOS6ivvvqt+lROSNXCJo8p4C3Peryvvvq31g9r92wG+Jz9D2RhkS7Jz9VX/3B9KtukMuQwyaR2gtqb14ehvvrqs6FeuARTxb4wmsRPXdRzXfXVv6P+gAj+IyobD6cqeY/66h+uP7DS9RXg8PpdbT4Kc6a++uonp6kGAruBPHYgeb4c76uv/mH6FAS1zlJVv7CBQW2Q6quvfkdhnZqYsKXXN/fITKuvvvpN+uGRCOqEUzgeavNTX331O3Ldvkeiep/U7xCykaivvvpsfb+2lFOl/4GyHdLJUF/9w/W9tlzq77x+AGcfniaS1htCAAAAAElFTkSuQmCC";
-        boolean generateImage = generateImage(imageStr, "001.jpg");
+        String imageStr1="iVBORw0KGgoAAAANSUhEUgAAAH8AAAB/CAIAAABJ34pEAAAC+ElEQVR42u3cwXLCMAxFUf7/p+m2C6CJ3n0OqW+WdHCSY0a2JE8fT6/rrocE1+s/suvFuO//9Olp3o9MffLhXqeeGRFTX331Eyz83U5NTDjlp16H+nmpr776n0efxWJc/9Q0zNYGauTjYuqrr35JP9yizb5OhXv11Vf/Xvqz5DB8bepes92t+uqrn+svi30H7z5LcakS4T0qDeqrf1t9al+4zydf1F1RX/276WNN+jMTQ9Xuw4r/qYy9cqZBffV31V9Q1aISyNmejyoRsj7qq7+5PpW+9spb4d0XnMMYLD/qq7+5ftjkw9t11J6vt5tEagHqq7+5PrVTxOeDyqJ7DYPkT+qrrz4S6XqnCnoLwGw+kF+D+uqrz6rhJxgu6Qi2ewnqq69+u+CFLyS9TW2Y2R5HUF999ZGnpMpSYV5NrQS9yVNfffXHlfFZckgV8sI+InU2YtaCVV999fNjAfiuNAzuYdluwaEN9dVXv/pKeNkunODe3M9PU6mvvvqjzhmVrIbFtXCtWn+eQ331N9dfkEmGxfdwFntrFVDfV1999elOPyXb29SGlcHkuIP66m+uj5fa8Xi9gG82cjLl6qu/uX4vOQwL/VQLAd/LVlZd9dXfTH9BlkhF1UsCN95MVV999fMITmW/1GtTpb1wOfzz7uqrr37Szp9N3oLDBF/+LfXVVz+JhrN8GL8pPjJerVNfffXPxv3wcCRViQurfuHkhecn1Fdf/bF+7+EWEM9CealWqL766ifPNNuQhfq9Jaq3egGdRfXV30wfD4tUHku1BvEsep7rqq/+rvq9Bl64WrTzzyf3X9gq+3311f+P+mkgo3PdUyP3Mm2qb6G++ur/1keiWF40p/JP6qeDz/TrHaf66m+v34vyVEqJNwLxNoP66qs/1g9LV1SFfTYyFe6pu6uvvvpr9EPHlbeY9SyRNoP66qvf1v+2HDV8HiQ/V1999dm9Gh55e5OHEx9/ePXVV7+Uo4axONz84UsUO/fqq7+5vtcll/pXXj/dwcfSc5rQvQAAAABJRU5ErkJggg==";
+        boolean generateImage = generateImage(imageStr1, "001.jpg");
         System.out.println(generateImage);
     }
 }

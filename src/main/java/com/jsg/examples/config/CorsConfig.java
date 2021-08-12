@@ -18,7 +18,7 @@ public class CorsConfig {
         return corsConfiguration;
     }
 
-
+//@bean给容器注册单实例对象
     @Bean
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

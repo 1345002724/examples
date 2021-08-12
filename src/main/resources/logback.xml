@@ -12,7 +12,7 @@
 
     <!--<springProperty name="profile" source="spring.profiles.active" />-->
 
-    <contextName>kcxg</contextName>
+    <contextName>examples</contextName>
 
     <!--&lt;!&ndash;文件夹在当前项目磁盘根目录&ndash;&gt;-->
     <property name="LOG_PATH" value="D:\\" />
@@ -167,6 +167,8 @@
         </encoder>
         <!--此日志appender是为开发使用，只配置最底级别，控制台输出的日志级别是大于或等于此级别的日志信息-->
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+
+            <!--控制台日志级别改这里-->
             <level>debug</level>
         </filter>
     </appender>
@@ -181,7 +183,11 @@
     <!--  项目 mapper 路径
             console控制台显示sql语句：STDOUT.filter.level -> debug级别
     -->
-    <logger name="com.jsg.gztyzf" level="DEBUG"></logger>
+
+
+<!-- liu***   ************************项目名称变了，调整这里****************************-->
+
+    <logger name="com.jsg.examples" level="DEBUG"></logger>
 
     <!-- 生产环境下，将此级别配置为适合的级别，以免日志文件太多或影响程序性能 -->
     <root level="INFO">

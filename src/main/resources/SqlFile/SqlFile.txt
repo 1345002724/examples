@@ -20,4 +20,23 @@ COMMENT ON COLUMN menulist.mkmc2 IS '二级级模块名称';
 COMMENT ON COLUMN menulist.types IS 'types(1代表所属级别为一级模块，2代表所属级别为2级模块)';
 
 
+
+
+--数据
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('10', '用户管理', 'el-icon-user', NULL, NULL, '1', NULL);
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('10', '用户管理', NULL, '10', '角色管理', '2', 'users');
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('20', '权限管理', 'el-icon-s-tools', NULL, NULL, '1', '');
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('20', '权限管理', NULL, '20', '权限管理', '2', NULL);
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('30', '日常工作', 'el-icon-edit-outline', '', NULL, '1', NULL);
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('30', '日常工作', NULL, '30', '日常工作', '2', NULL);
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('40', '帆软报表', 'el-icon-folder', NULL, NULL, '1', NULL);
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('40', '帆软报表', NULL, '40', '帆软报表', '2', 'FineReport');
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('50', '系统监控', 'el-icon-s-platform', NULL, NULL, '1', NULL);
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('50', '服务监控', NULL, '50', '服务监控', '2', 'server');
+INSERT INTO menulist(`mkbm1`, `mkmc1`, `icon`, `mkbm2`, `mkmc2`, `types`, `path`) VALUES ('50', '在线用户', NULL, '51', '在线用户', '2', 'zxyh');
+
+
 表二：
+
+
+

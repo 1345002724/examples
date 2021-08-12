@@ -2,21 +2,34 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jsg.examples.dao.RybmDao">
 
-        <!--查询人员信息-->
-    <select id="queryRybm" parameterType="string" resultType="com.jsg.examples.entity.RybmEntity" >
-        select * from gyb_rybm where  rybm like '%'||#{str}||'%' or ryxm like '%'||#{str}||'%'
+        <!--分页查询人员信息-->
+    <select id="queryRybm" parameterType="com.jsg.examples.entity.QueryInfoEntity" resultType="com.jsg.examples.entity.RybmEntity" >
+
+        select * from gyb_user  where 1=1
+        and (rybm like '%'||#{query}||'%' or ryxm like '%'||#{query}||'%' or pydm like '%'||upper(#{query})||'%') order by rybm
 
     </select>
 
+    <!--修改人员状态-->
+    <update id="updateRybm">
+        update gyb_user set qyzt=#{qyzt} where rybm=#{rybm}
+    </update>
 
         <!--插入人员信息-->
         <insert id="insertRybm" parameterType="com.jsg.examples.entity.RybmEntity">
-         insert into a_rybm(id,rybm,ryxm) values(sys_guid(),#{rybm},#{ryxm})
+         insert into gyb_user(RYBM,RYXM,PYDM,PASSWORD,SJHM,SFZHM,XB,QYZT)
+         values(#{RYBM},#{RYXM},#{PYDM},#{PASSWORD},#{SJHM},#{SFZHM},#{XB},#{QYZT})
         </insert>
 
+    <!--登录验证密码-->
     <select id="logindao"  resultType="com.jsg.examples.entity.RybmEntity" >
-        select * from gyb_rybm where  1=1 and rybm=#{username} and password=#{password}
+        select * from gyb_user where  1=1 and rybm=#{username} and password=#{password}
 
     </select>
+
+    <!--删除人员-->
+    <delete id="DeleteUser">
+        delete from gyb_user where rybm=#{rybm}
+    </delete>
 
 </mapper>

@@ -1,5 +1,7 @@
 package com.jsg.examples.constants;
 
+
+
 public interface BaseConstants {
 
     /**
@@ -8,7 +10,9 @@ public interface BaseConstants {
      */
     String MESSAGE_SUCCESS  = "成功";
     String MESSAGE_FAIL  = "失败";
+    String CODE_SUCCESS  = "200";   //请求成功
+    String CODE_FAIL  = "400";  //请求失败
+    Integer CODE_LOGIN=401;  //用户未登录
 
-    String CODE_SUCCESS  = "200";
-    String CODE_FAIL  = "400";
+    String LoginUser="LoginToken" ;//所以token前面加上这个用于判断redis数据库里面哪些是登录的key
 }

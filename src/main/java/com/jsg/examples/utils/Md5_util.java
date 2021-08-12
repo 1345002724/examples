@@ -32,7 +32,7 @@ public class Md5_util {
     }
 
     public static void main(String[] args) throws UnsupportedEncodingException {
-        String str1="fdsfsdfsdfsd";
+        String str1="202cb962ac59075b964b07152d234b70";
 
        String result1= Md5_util.test01(str1);
         System.out.println("第一种32位方式加密"+result1);
