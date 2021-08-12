@@ -13,7 +13,9 @@ public class Test01 implements Test01_02 {
             int a=4;
             int b=2;
             int c=a/b;
+            int d=a*a*b;
             System.out.println(c);
+            System.out.println(d);
         } catch (Exception e) {
             System.out.println(e);
         }finally {
