@@ -50,6 +50,9 @@ public class LoginInterceptor implements HandlerInterceptor {
         token = token == null ? "" : token;   //判断token防止程序报错
         // Object result= redisTemplate.opsForValue().get(token);
         Long expire = redisTemplate.getExpire(token);//查询token在Redis中的时间
+
+        expire= Long.valueOf(2);//临时屏蔽登录验证
+
         if (expire > 0) {  //是登录状态
             //重置登录时间
             redisTemplate.expire(token, time_out, TimeUnit.MINUTES);

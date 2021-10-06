@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsg.examples.dao.YbDao">
+
+    <select id="YbLogEntity"  parameterType="com.jsg.examples.entity.YBLogEntity" resultType="com.jsg.examples.entity.YBLogEntity" >
+        select * from yb_log_new where jylx=#{jylx,jdbcType=VARCHAR} and qqrq>=to_date(#{starttime},'yyyy-mm-dd hh24:mi:ss')
+        and qqrq &lt;=to_date(#{endtime},'yyyy-mm-dd hh24:mi:ss') and YBJGID=#{ybjgid,jdbcType=VARCHAR}
+        and outstr  like '%inf_refmsgid%'
+    </select>
+
+</mapper>

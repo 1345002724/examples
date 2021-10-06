@@ -38,7 +38,7 @@ mybatis:
     map-underscore-to-camel-case: true
 
 server:
-  port: 8075
+  port: 8076
   #统一访问前缀
   servlet:
     context-path: /jsg
