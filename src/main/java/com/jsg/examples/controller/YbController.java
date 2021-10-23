@@ -3,6 +3,7 @@ import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.jsg.examples.entity.CommonResult;
 import com.jsg.examples.entity.YBLogEntity;
 import com.jsg.examples.service.YBService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 @RestController
 @RequestMapping("/yb")
@@ -20,7 +22,7 @@ public class YbController {
     YBService ybService;
 
     @RequestMapping("/zyxx")
-    public Object result(@RequestBody JSONObject JSONObject, HttpServletRequest request) {
+    public CommonResult result(@RequestBody JSONObject JSONObject, HttpServletRequest request) {
 
         String ls_jgid=JSONObject.get("fixmedins_code").toString();//机构id
 
@@ -37,6 +39,11 @@ public class YbController {
         JSONArray ss1 = (JSONArray) ss.get(0);
         JSONObject jsonObject2 = JSON.parseObject((String) ss1.get(0));
         JSONObject JSONObject3 = (com.alibaba.fastjson.JSONObject) jsonObject2.get("output");
+
+
+        if(jsonObject2.get("infcode").equals("1")){
+            return new CommonResult(500, "失败", result);
+        }
 
         JSONArray JSONArray1 = (JSONArray) JSONObject3.get("data");
         JSONArray jsonArray2 = new JSONArray();
@@ -130,8 +137,7 @@ public class YbController {
             result_json.add(ls_json);
 
         }
-
-        return result_json;
+        return new CommonResult(200, "成功", result_json);
     }
 
 
@@ -153,7 +159,17 @@ public class YbController {
 
     @RequestMapping("/drmzzycx")
     public Object mzzycx_dr(@RequestBody JSONObject jsonObject){
+        Object obj=ybService.query_DRZYMZCX(jsonObject);
+            return obj;
+    }
 
-        return null;
+    @RequestMapping("/ypzlmx")
+    public void ypzlmx(){
+        try {
+            ybService.test02("E:\\202108106785348076776592002.txt");
+            System.out.println("搞定");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

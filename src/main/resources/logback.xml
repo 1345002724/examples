@@ -169,7 +169,7 @@
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 
             <!--控制台日志级别改这里-->
-            <level>debug</level>
+            <level>info</level>
         </filter>
     </appender>
 
@@ -178,7 +178,7 @@
 
     <!-- mybatis日志打印-->
     <logger name="org.apache.ibatis" level="DEBUG" />
-    <logger name="java.sql" level="DEBUG" />
+    <logger name="java.sql" level="info" />
 
     <!--  项目 mapper 路径
             console控制台显示sql语句：STDOUT.filter.level -> debug级别

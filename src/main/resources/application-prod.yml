@@ -2,9 +2,9 @@
 spring:
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@10.72.5.16:1521:orcl1
-    username: phis
-    password: phis
+    url: jdbc:oracle:thin:@10.72.4.58:1521:orcl
+    username: phis_cq_zx
+    password: phis_cq_zx
 
   #配置使用Redis
   redis:
@@ -37,7 +37,7 @@ mybatis:
     map-underscore-to-camel-case: true
 
 server:
-  port: 8076
+  port: 8077
   #统一访问前缀
   servlet:
     context-path: /jsg

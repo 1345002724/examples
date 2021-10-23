@@ -19,8 +19,9 @@ spring:
 
   mvc:
     view:
-      prefix: .html
+      suffix: .html
     static-path-pattern: /**
+
 
   ## 是否启动日志SQL语句
   jpa:
@@ -44,5 +45,6 @@ server:
     context-path: /jsg
 
 
+
 #登录超时时间设置 (单位:分钟)
-time_out: 20
+time_out: 60

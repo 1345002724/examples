@@ -1,3 +1,4 @@
+/*
 package com.jsg.examples.config.Interceptor;
 
 
@@ -19,7 +20,9 @@ public class MyMVCConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         //添加拦截器
        // InterceptorRegistration interceptorRegistration = registry.addInterceptor(new LoginInterceptor());
-        /*********************springboot的拦截器中注入redisTemplate为null的解决办法*********************/
+        */
+/*********************springboot的拦截器中注入redisTemplate为null的解决办法*********************//*
+
         InterceptorRegistration interceptorRegistration = registry.addInterceptor(getloginInterceptor());
         //添加拦截映射规则，哪些拦截，哪些不拦截
         //先拦截所有
@@ -29,7 +32,9 @@ public class MyMVCConfig implements WebMvcConfigurer {
     }
 
 
-    /*********************springboot的拦截器中注入redisTemplate为null的解决办法*********************/
+    */
+/*********************springboot的拦截器中注入redisTemplate为null的解决办法*********************//*
+
     @Bean
      public LoginInterceptor getloginInterceptor(){
         return new LoginInterceptor();
@@ -40,3 +45,4 @@ public class MyMVCConfig implements WebMvcConfigurer {
 
 
 
+*/

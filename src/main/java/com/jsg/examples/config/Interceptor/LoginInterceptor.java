@@ -9,6 +9,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
@@ -52,6 +54,12 @@ public class LoginInterceptor implements HandlerInterceptor {
         Long expire = redisTemplate.getExpire(token);//查询token在Redis中的时间
 
         expire= Long.valueOf(2);//临时屏蔽登录验证
+
+ /*       Class<?> handlerClass = handler.getClass();
+        HandlerMethod method=(HandlerMethod)handler;
+        RequestMapping methodAnnotation = method.getMethodAnnotation(RequestMapping.class);
+        System.out.println(methodAnnotation.value());*/
+
 
         if (expire > 0) {  //是登录状态
             //重置登录时间
