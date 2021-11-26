@@ -169,7 +169,7 @@
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
 
             <!--控制台日志级别改这里-->
-            <level>info</level>
+            <level>DEBUG</level>
         </filter>
     </appender>
 

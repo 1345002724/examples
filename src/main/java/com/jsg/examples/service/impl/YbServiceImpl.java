@@ -11,6 +11,7 @@ import com.jsg.examples.entity.YBLogEntity;
 import com.jsg.examples.entity.YbYpzlml;
 import com.jsg.examples.service.YBService;
 
+import com.jsg.examples.task.TokenTask;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,8 @@ public class YbServiceImpl implements YBService {
 
     @Autowired
     YbYpzlmlDao ybYpzlmlDao;
+    @Autowired
+    TokenTask tokenTask;
 
     @Override
     public Object query_ZYMZCX(YBLogEntity ybLogEntity) {
@@ -152,8 +155,11 @@ public class YbServiceImpl implements YBService {
     public CommonResult query_DRZYMZCX(JSONObject jsonObject) {
 
         String sfzh=jsonObject.getString("sfzh");
-        String cookie=jsonObject.getString("cookie");
-        String token=jsonObject.getString("token");
+       // String cookie=jsonObject.getString("cookie");
+       // String token=jsonObject.getString("token");
+          String cookie=tokenTask.cookie;
+          String token=tokenTask.token;
+
         String insutype=jsonObject.getString("insutype"); //类型职工还是居民职工传310，居民传390
 
 

@@ -25,6 +25,8 @@ import static com.jsg.examples.utils.Http_Yb_Test.doPost_xxcf;
 @Configuration
 public class TokenTask {
 
+    public String token;
+    public String cookie;
     private ScheduledExecutorService executor= null;
 
     @PostConstruct
@@ -49,8 +51,8 @@ public class TokenTask {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    String token= (String) mapini.get("token");
-                    String cookie= (String) mapini.get("cookie");
+                    token= (String) mapini.get("token");
+                    cookie= (String) mapini.get("cookie");
 
 
                     //tomcat容器默认采用了iso-8859-1的编码方法.此处将form_data里面的frontUrl编码
