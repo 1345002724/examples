@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.jsg.examples.entity.CommonResult;
 import com.jsg.examples.entity.YBLogEntity;
 import com.jsg.examples.service.YBService;
+import com.jsg.examples.service.impl.YbServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -171,5 +172,12 @@ public class YbController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    //医保对账不不和处理数据
+    @RequestMapping("/ybdz")
+    public  void ybdz(String ybjgid,String yblx){
+        ybService.ybdz("","");
     }
 }

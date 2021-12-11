@@ -1,14 +1,10 @@
 package com.jsg.examples.service.impl;
 
-import cn.hutool.core.io.IoUtil;
-import com.alibaba.fastjson.JSON;
+import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.jsg.examples.dao.YbDao;
-import com.jsg.examples.dao.YbYpzlmlDao;
-import com.jsg.examples.entity.CommonResult;
-import com.jsg.examples.entity.YBLogEntity;
-import com.jsg.examples.entity.YbYpzlml;
+import com.jsg.examples.dao.*;
+import com.jsg.examples.entity.*;
 import com.jsg.examples.service.YBService;
 
 import com.jsg.examples.task.TokenTask;
@@ -18,10 +14,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.jsg.examples.utils.Http_Yb_Test.doPost_xxcf;
 
@@ -35,6 +28,15 @@ public class YbServiceImpl implements YBService {
     YbYpzlmlDao ybYpzlmlDao;
     @Autowired
     TokenTask tokenTask;
+
+    @Autowired
+    YbJymxDao ybJymxDao;
+
+    @Autowired
+    YbBddzResultDao ybBddzResultDao;
+
+    @Autowired
+    YbBddzDao ybBddzDao;
 
     @Override
     public Object query_ZYMZCX(YBLogEntity ybLogEntity) {
@@ -393,9 +395,7 @@ public class YbServiceImpl implements YBService {
 
 
 
-
-
-/*诊疗*/
+    /*诊疗*/
     public  void test03(String str) throws IOException {
         File file=new File(str);
         FileReader stream = new FileReader(file);
@@ -433,6 +433,15 @@ public class YbServiceImpl implements YBService {
     }
 
 
+    //医保对账
+    @Override
+    public void ybdz(String ybjgid,String yblx) {
+
+        List<Map<String,Object>> list=new ArrayList<>();
+        list= ybBddzDao.ybquery();
+        System.out.println(list);
+
+    }
 
 
     public static void main(String[] args) {
