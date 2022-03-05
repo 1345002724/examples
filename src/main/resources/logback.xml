@@ -15,7 +15,7 @@
     <contextName>examples</contextName>
 
     <!--&lt;!&ndash;文件夹在当前项目磁盘根目录&ndash;&gt;-->
-    <property name="LOG_PATH" value="D:\\" />
+    <property name="LOG_PATH" value="D:/logs/" />
 
     <!--设置系统日志目录-->
     <property name="APPDIR" value="logs" />
