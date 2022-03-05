@@ -31,7 +31,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Value("${time_out}")
     private Long time_out; //登录超时设置
-    @Value("$isLogin")
+    @Value("${isLogin}")
     private boolean isLogin;
 
     //处理器方法执行前调用
