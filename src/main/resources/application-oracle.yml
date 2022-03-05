@@ -1,0 +1,21 @@
+server:
+  port: 8077
+  servlet:
+    context-path: /jsg
+
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.72.4.58:1521:orcl
+    username: phis_cq_zx
+    password: phis_cq_zx
+  redis:
+    database: 0  #使用Redis的0号数据库
+    host: 127.0.0.1
+    port: 6379
+    password:
+  cache:
+    type: redis
+
+time_out: 60 #登录超时时间设置 (单位:分钟)
+redisstart: 0 #配置是否启动redis

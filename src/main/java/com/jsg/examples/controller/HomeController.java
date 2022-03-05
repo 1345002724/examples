@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
-@Api("homeController")
 @RestController
 @RequestMapping("/home")
 public class HomeController {
@@ -22,7 +21,6 @@ public class HomeController {
     @Autowired
     HomeService homeService;
 
-   @ApiOperation(value = "干嘛的")
     @RequestMapping(value = "/menulist",method = RequestMethod.GET)
     public CommonResult menulist() {
         List<MenulistEntity> result = homeService.MenulistService();

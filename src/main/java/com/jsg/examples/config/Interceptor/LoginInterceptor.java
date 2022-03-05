@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,47 +31,31 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     @Value("${time_out}")
     private Long time_out; //登录超时设置
+    @Value("$isLogin")
+    private boolean isLogin;
 
     //处理器方法执行前调用
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        //进行登录校验
+        if (isLogin) {
+            //判断是否登录状态
+            String token = request.getHeader("Authorization");
+            token = token == null ? "" : token;   //判断token防止程序报错
+            Long expire = redisTemplate.getExpire(token);//查询token在Redis中的时间
 
-/*        //一、判断是否重复提交
-        String requesturl= request.getHeader("Authorization")+request.getRequestURI();
-        logger.debug("访问路径:"+requesturl);
-        requesturl=requesturl==null?"":requesturl;
-        long urltime=redisTemplate.getExpire(requesturl);
-        if(urltime>0){
-            logger.info("重复登录");
-            return false;
-        } else redisTemplate.opsForValue().set(requesturl,0, 1,TimeUnit.SECONDS);*/
-
-
-        //判断是否登录状态
-        String token = request.getHeader("Authorization");
-        token = token == null ? "" : token;   //判断token防止程序报错
-        // Object result= redisTemplate.opsForValue().get(token);
-        Long expire = redisTemplate.getExpire(token);//查询token在Redis中的时间
-
-        expire= Long.valueOf(2);//临时屏蔽登录验证
-
- /*       Class<?> handlerClass = handler.getClass();
-        HandlerMethod method=(HandlerMethod)handler;
-        RequestMapping methodAnnotation = method.getMethodAnnotation(RequestMapping.class);
-        System.out.println(methodAnnotation.value());*/
-
-
-        if (expire > 0) {  //是登录状态
-            //重置登录时间
-            redisTemplate.expire(token, time_out, TimeUnit.MINUTES);
-            return true;
+            if (expire > 0) {  //是登录状态
+                //重置登录时间
+                redisTemplate.expire(token, time_out, TimeUnit.MINUTES);
+                return true;
+            } else {
+                logger.debug("登录失败,拦截器处抛出");
+                response.setContentType("json/text;charset=utf-8");
+                PrintWriter out = response.getWriter();
+                out.write(JSONObject.toJSONString(new CommonResult(BaseConstants.CODE_LOGIN, "错误", "用户未登录")));
+                return false;
+            }
         } else {
-            logger.debug("登录失败,拦截器处抛出");
-            response.setContentType("json/text;charset=utf-8");
-            PrintWriter out = response.getWriter();
-            out.write(JSONObject.toJSONString(new CommonResult(BaseConstants.CODE_LOGIN, "错误", "用户未登录")));
-            return false;
+            return true;
         }
     }
 

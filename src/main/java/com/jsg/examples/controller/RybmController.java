@@ -36,10 +36,6 @@ public class RybmController<T> {
         List<RybmEntity> result = rybmService.queryRybm(queryInfoEntity);
         //if(result!=null){  用于判断单个
         if (!result.isEmpty()) {
-            /*
-            返回json串写法
-            return JSONObject.toJSONString(new CommonResult(200, "成功", result));
-            */
             return new CommonResult(200, "成功", result);
         } else {
             return (new CommonResult(444, "失败", null));
