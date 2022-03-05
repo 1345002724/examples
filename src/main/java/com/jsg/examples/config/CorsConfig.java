@@ -7,7 +7,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
 
-//配置过滤器，解决vuecli调用跨域问题
+//配置过滤器，解决vuecli1调用跨域问题
 @Configuration
 public class CorsConfig {
     private CorsConfiguration buildConfig() {
