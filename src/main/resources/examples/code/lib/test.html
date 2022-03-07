@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 1. 导入Vue包 -->
+    <script src="./lib/vue-2.4.0.js"></script>
+</head>
+
+<body>
+<!-- 2. 创建一个要控制的区域 -->
+<div id="app">
+
+    <button @click="dy">获取注册码</button>
+    <h4>{{ msg }}</h4>
+
+</div>
+
+<script>
+    // 注意：在 VM实例中，如果想要获取 data 上的数据，或者 想要调用 methods 中的 方法，必须通过 this.数据属性名  或  this.方法名 来进行访问，这里的this，就表示 我们 new 出来的  VM 实例对象
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 0
+
+        },
+        methods: {
+            multiply: function (arg1, arg2) {
+                var m = 0, s1 = arg1.toString(), s2 = arg2.toString();
+                try {
+                    m += s1.split(".")[1].length
+                } catch (e) {
+                }
+                try {
+                    m += s2.split(".")[1].length
+                } catch (e) {
+                }
+                return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m)
+            },
+            dy: function () {
+                this.msg = this.multiply(543.63, 100)
+            }
+        }
+    })
+</script>
+</body>
+
+</html>

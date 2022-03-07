@@ -1,3 +1,4 @@
+/*
 package com.jsg.examples.test;
 
 import jp.sourceforge.qrcode.QRCodeDecoder;
@@ -42,3 +43,4 @@ public class Test05 {
     }
     }
 
+*/

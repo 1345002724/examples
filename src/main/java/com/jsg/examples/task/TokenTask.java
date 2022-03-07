@@ -44,7 +44,7 @@ public class TokenTask {
 
     /************************************循环体内的方法*************************************************/
                     //获取cookie、token
-                    String filepath="D:\\python\\Examples\\YB\\conf.ini";
+                    String filepath="E:\\python\\Examples\\YB\\conf.ini";
                     Map mapini= null;
                     try {
                         mapini = ReadFile.readFile(filepath);
