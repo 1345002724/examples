@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsg.examples.dao.YbJymxDao">
+  <resultMap id="BaseResultMap" type="com.jsg.examples.entity.YbJymx">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="psnName" jdbcType="VARCHAR" property="psnname" />
+    <result column="mdtrtCertNo" jdbcType="VARCHAR" property="mdtrtcertno" />
+    <result column="certno" jdbcType="VARCHAR" property="certno" />
+    <result column="optTime" jdbcType="TIMESTAMP" property="opttime" />
+    <result column="opterId" jdbcType="VARCHAR" property="opterid" />
+    <result column="optinsNo" jdbcType="VARCHAR" property="optinsno" />
+    <result column="fixmedinsName" jdbcType="VARCHAR" property="fixmedinsname" />
+    <result column="psnNo" jdbcType="VARCHAR" property="psnno" />
+    <result column="mdtrtId" jdbcType="VARCHAR" property="mdtrtid" />
+    <result column="setlId" jdbcType="VARCHAR" property="setlid" />
+    <result column="medfeeSumamt" jdbcType="VARCHAR" property="medfeesumamt" />
+    <result column="hifpPay" jdbcType="VARCHAR" property="hifppay" />
+    <result column="hifmiPay" jdbcType="VARCHAR" property="hifmipay" />
+    <result column="hifobPay" jdbcType="VARCHAR" property="hifobpay" />
+    <result column="cvlservPay" jdbcType="VARCHAR" property="cvlservpay" />
+    <result column="mafPay" jdbcType="VARCHAR" property="mafpay" />
+    <result column="acctPay" jdbcType="VARCHAR" property="acctpay" />
+    <result column="othfundPay" jdbcType="VARCHAR" property="othfundpay" />
+    <result column="brxz" jdbcType="VARCHAR" property="brxz" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, psnName, mdtrtCertNo, certno, optTime, opterId, optinsNo, fixmedinsName, psnNo, 
+    mdtrtId, setlId, medfeeSumamt, hifpPay, hifmiPay, hifobPay, cvlservPay, mafPay, acctPay, 
+    othfundPay, brxz
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from yb_jymx
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from yb_jymx
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.jsg.examples.entity.YbJymx" useGeneratedKeys="true">
+    insert into yb_jymx (psnName, mdtrtCertNo, certno, 
+      optTime, opterId, optinsNo, 
+      fixmedinsName, psnNo, mdtrtId, 
+      setlId, medfeeSumamt, hifpPay, 
+      hifmiPay, hifobPay, cvlservPay, 
+      mafPay, acctPay, othfundPay, 
+      brxz)
+    values (#{psnname,jdbcType=VARCHAR}, #{mdtrtcertno,jdbcType=VARCHAR}, #{certno,jdbcType=VARCHAR}, 
+      #{opttime,jdbcType=TIMESTAMP}, #{opterid,jdbcType=VARCHAR}, #{optinsno,jdbcType=VARCHAR}, 
+      #{fixmedinsname,jdbcType=VARCHAR}, #{psnno,jdbcType=VARCHAR}, #{mdtrtid,jdbcType=VARCHAR}, 
+      #{setlid,jdbcType=VARCHAR}, #{medfeesumamt,jdbcType=VARCHAR}, #{hifppay,jdbcType=VARCHAR}, 
+      #{hifmipay,jdbcType=VARCHAR}, #{hifobpay,jdbcType=VARCHAR}, #{cvlservpay,jdbcType=VARCHAR}, 
+      #{mafpay,jdbcType=VARCHAR}, #{acctpay,jdbcType=VARCHAR}, #{othfundpay,jdbcType=VARCHAR}, 
+      #{brxz,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.jsg.examples.entity.YbJymx" useGeneratedKeys="true">
+    insert into yb_jymx
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="psnname != null">
+        psnName,
+      </if>
+      <if test="mdtrtcertno != null">
+        mdtrtCertNo,
+      </if>
+      <if test="certno != null">
+        certno,
+      </if>
+      <if test="opttime != null">
+        optTime,
+      </if>
+      <if test="opterid != null">
+        opterId,
+      </if>
+      <if test="optinsno != null">
+        optinsNo,
+      </if>
+      <if test="fixmedinsname != null">
+        fixmedinsName,
+      </if>
+      <if test="psnno != null">
+        psnNo,
+      </if>
+      <if test="mdtrtid != null">
+        mdtrtId,
+      </if>
+      <if test="setlid != null">
+        setlId,
+      </if>
+      <if test="medfeesumamt != null">
+        medfeeSumamt,
+      </if>
+      <if test="hifppay != null">
+        hifpPay,
+      </if>
+      <if test="hifmipay != null">
+        hifmiPay,
+      </if>
+      <if test="hifobpay != null">
+        hifobPay,
+      </if>
+      <if test="cvlservpay != null">
+        cvlservPay,
+      </if>
+      <if test="mafpay != null">
+        mafPay,
+      </if>
+      <if test="acctpay != null">
+        acctPay,
+      </if>
+      <if test="othfundpay != null">
+        othfundPay,
+      </if>
+      <if test="brxz != null">
+        brxz,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="psnname != null">
+        #{psnname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdtrtcertno != null">
+        #{mdtrtcertno,jdbcType=VARCHAR},
+      </if>
+      <if test="certno != null">
+        #{certno,jdbcType=VARCHAR},
+      </if>
+      <if test="opttime != null">
+        #{opttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="opterid != null">
+        #{opterid,jdbcType=VARCHAR},
+      </if>
+      <if test="optinsno != null">
+        #{optinsno,jdbcType=VARCHAR},
+      </if>
+      <if test="fixmedinsname != null">
+        #{fixmedinsname,jdbcType=VARCHAR},
+      </if>
+      <if test="psnno != null">
+        #{psnno,jdbcType=VARCHAR},
+      </if>
+      <if test="mdtrtid != null">
+        #{mdtrtid,jdbcType=VARCHAR},
+      </if>
+      <if test="setlid != null">
+        #{setlid,jdbcType=VARCHAR},
+      </if>
+      <if test="medfeesumamt != null">
+        #{medfeesumamt,jdbcType=VARCHAR},
+      </if>
+      <if test="hifppay != null">
+        #{hifppay,jdbcType=VARCHAR},
+      </if>
+      <if test="hifmipay != null">
+        #{hifmipay,jdbcType=VARCHAR},
+      </if>
+      <if test="hifobpay != null">
+        #{hifobpay,jdbcType=VARCHAR},
+      </if>
+      <if test="cvlservpay != null">
+        #{cvlservpay,jdbcType=VARCHAR},
+      </if>
+      <if test="mafpay != null">
+        #{mafpay,jdbcType=VARCHAR},
+      </if>
+      <if test="acctpay != null">
+        #{acctpay,jdbcType=VARCHAR},
+      </if>
+      <if test="othfundpay != null">
+        #{othfundpay,jdbcType=VARCHAR},
+      </if>
+      <if test="brxz != null">
+        #{brxz,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jsg.examples.entity.YbJymx">
+    update yb_jymx
+    <set>
+      <if test="psnname != null">
+        psnName = #{psnname,jdbcType=VARCHAR},
+      </if>
+      <if test="mdtrtcertno != null">
+        mdtrtCertNo = #{mdtrtcertno,jdbcType=VARCHAR},
+      </if>
+      <if test="certno != null">
+        certno = #{certno,jdbcType=VARCHAR},
+      </if>
+      <if test="opttime != null">
+        optTime = #{opttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="opterid != null">
+        opterId = #{opterid,jdbcType=VARCHAR},
+      </if>
+      <if test="optinsno != null">
+        optinsNo = #{optinsno,jdbcType=VARCHAR},
+      </if>
+      <if test="fixmedinsname != null">
+        fixmedinsName = #{fixmedinsname,jdbcType=VARCHAR},
+      </if>
+      <if test="psnno != null">
+        psnNo = #{psnno,jdbcType=VARCHAR},
+      </if>
+      <if test="mdtrtid != null">
+        mdtrtId = #{mdtrtid,jdbcType=VARCHAR},
+      </if>
+      <if test="setlid != null">
+        setlId = #{setlid,jdbcType=VARCHAR},
+      </if>
+      <if test="medfeesumamt != null">
+        medfeeSumamt = #{medfeesumamt,jdbcType=VARCHAR},
+      </if>
+      <if test="hifppay != null">
+        hifpPay = #{hifppay,jdbcType=VARCHAR},
+      </if>
+      <if test="hifmipay != null">
+        hifmiPay = #{hifmipay,jdbcType=VARCHAR},
+      </if>
+      <if test="hifobpay != null">
+        hifobPay = #{hifobpay,jdbcType=VARCHAR},
+      </if>
+      <if test="cvlservpay != null">
+        cvlservPay = #{cvlservpay,jdbcType=VARCHAR},
+      </if>
+      <if test="mafpay != null">
+        mafPay = #{mafpay,jdbcType=VARCHAR},
+      </if>
+      <if test="acctpay != null">
+        acctPay = #{acctpay,jdbcType=VARCHAR},
+      </if>
+      <if test="othfundpay != null">
+        othfundPay = #{othfundpay,jdbcType=VARCHAR},
+      </if>
+      <if test="brxz != null">
+        brxz = #{brxz,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jsg.examples.entity.YbJymx">
+    update yb_jymx
+    set psnName = #{psnname,jdbcType=VARCHAR},
+      mdtrtCertNo = #{mdtrtcertno,jdbcType=VARCHAR},
+      certno = #{certno,jdbcType=VARCHAR},
+      optTime = #{opttime,jdbcType=TIMESTAMP},
+      opterId = #{opterid,jdbcType=VARCHAR},
+      optinsNo = #{optinsno,jdbcType=VARCHAR},
+      fixmedinsName = #{fixmedinsname,jdbcType=VARCHAR},
+      psnNo = #{psnno,jdbcType=VARCHAR},
+      mdtrtId = #{mdtrtid,jdbcType=VARCHAR},
+      setlId = #{setlid,jdbcType=VARCHAR},
+      medfeeSumamt = #{medfeesumamt,jdbcType=VARCHAR},
+      hifpPay = #{hifppay,jdbcType=VARCHAR},
+      hifmiPay = #{hifmipay,jdbcType=VARCHAR},
+      hifobPay = #{hifobpay,jdbcType=VARCHAR},
+      cvlservPay = #{cvlservpay,jdbcType=VARCHAR},
+      mafPay = #{mafpay,jdbcType=VARCHAR},
+      acctPay = #{acctpay,jdbcType=VARCHAR},
+      othfundPay = #{othfundpay,jdbcType=VARCHAR},
+      brxz = #{brxz,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

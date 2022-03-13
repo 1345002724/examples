@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jsg.examples.dao.YbBddzDao">
+  <resultMap id="BaseResultMap" type="com.jsg.examples.entity.YbBddz">
+    <result column="ybjgid" jdbcType="VARCHAR" property="ybjgid" />
+    <result column="jsid" jdbcType="VARCHAR" property="jsid" />
+    <result column="jzid" jdbcType="VARCHAR" property="jzid" />
+    <result column="fsfbwid" jdbcType="VARCHAR" property="fsfbwid" />
+    <result column="qslb" jdbcType="VARCHAR" property="qslb" />
+    <result column="rybh" jdbcType="VARCHAR" property="rybh" />
+    <result column="ryxm" jdbcType="VARCHAR" property="ryxm" />
+    <result column="jssj" jdbcType="VARCHAR" property="jssj" />
+    <result column="ylzfy" jdbcType="VARCHAR" property="ylzfy" />
+    <result column="xzlb" jdbcType="VARCHAR" property="xzlb" />
+    <result column="yllb" jdbcType="VARCHAR" property="yllb" />
+  </resultMap>
+  <insert id="insert" parameterType="com.jsg.examples.entity.YbBddz">
+    insert into yb_bddz (ybjgid, jsid, jzid, 
+      fsfbwid, qslb, rybh, 
+      ryxm, jssj, ylzfy, 
+      xzlb, yllb)
+    values (#{ybjgid,jdbcType=VARCHAR}, #{jsid,jdbcType=VARCHAR}, #{jzid,jdbcType=VARCHAR}, 
+      #{fsfbwid,jdbcType=VARCHAR}, #{qslb,jdbcType=VARCHAR}, #{rybh,jdbcType=VARCHAR}, 
+      #{ryxm,jdbcType=VARCHAR}, #{jssj,jdbcType=VARCHAR}, #{ylzfy,jdbcType=VARCHAR}, 
+      #{xzlb,jdbcType=VARCHAR}, #{yllb,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jsg.examples.entity.YbBddz">
+    insert into yb_bddz
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ybjgid != null">
+        ybjgid,
+      </if>
+      <if test="jsid != null">
+        jsid,
+      </if>
+      <if test="jzid != null">
+        jzid,
+      </if>
+      <if test="fsfbwid != null">
+        fsfbwid,
+      </if>
+      <if test="qslb != null">
+        qslb,
+      </if>
+      <if test="rybh != null">
+        rybh,
+      </if>
+      <if test="ryxm != null">
+        ryxm,
+      </if>
+      <if test="jssj != null">
+        jssj,
+      </if>
+      <if test="ylzfy != null">
+        ylzfy,
+      </if>
+      <if test="xzlb != null">
+        xzlb,
+      </if>
+      <if test="yllb != null">
+        yllb,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ybjgid != null">
+        #{ybjgid,jdbcType=VARCHAR},
+      </if>
+      <if test="jsid != null">
+        #{jsid,jdbcType=VARCHAR},
+      </if>
+      <if test="jzid != null">
+        #{jzid,jdbcType=VARCHAR},
+      </if>
+      <if test="fsfbwid != null">
+        #{fsfbwid,jdbcType=VARCHAR},
+      </if>
+      <if test="qslb != null">
+        #{qslb,jdbcType=VARCHAR},
+      </if>
+      <if test="rybh != null">
+        #{rybh,jdbcType=VARCHAR},
+      </if>
+      <if test="ryxm != null">
+        #{ryxm,jdbcType=VARCHAR},
+      </if>
+      <if test="jssj != null">
+        #{jssj,jdbcType=VARCHAR},
+      </if>
+      <if test="ylzfy != null">
+        #{ylzfy,jdbcType=VARCHAR},
+      </if>
+      <if test="xzlb != null">
+        #{xzlb,jdbcType=VARCHAR},
+      </if>
+      <if test="yllb != null">
+        #{yllb,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+    <select id="ybquery" resultType="java.util.Map">
+      select * from gyb_user a inner join username b on a.rybm=b.id
+    </select>
+</mapper>
