@@ -24,20 +24,6 @@ public class YbServiceImpl implements YBService {
     @Autowired
     YbDao ybDao;
 
-    @Autowired
-    YbYpzlmlDao ybYpzlmlDao;
-    @Autowired
-    TokenTask tokenTask;
-
-    @Autowired
-    YbJymxDao ybJymxDao;
-
-    @Autowired
-    YbBddzResultDao ybBddzResultDao;
-
-    @Autowired
-    YbBddzDao ybBddzDao;
-
     @Override
     public Object query_ZYMZCX(YBLogEntity ybLogEntity) {
 
@@ -159,8 +145,8 @@ public class YbServiceImpl implements YBService {
         String sfzh=jsonObject.getString("sfzh");
        // String cookie=jsonObject.getString("cookie");
        // String token=jsonObject.getString("token");
-          String cookie=tokenTask.cookie;
-          String token=tokenTask.token;
+          String cookie=TokenTask.cookie;
+          String token=TokenTask.token;
 
         String insutype=jsonObject.getString("insutype"); //类型职工还是居民职工传310，居民传390
 
@@ -355,47 +341,47 @@ public class YbServiceImpl implements YBService {
         return new CommonResult(200, "成功", jsr_result);
     }
 
-    /*药品对码*/
-    @Override
-    public  void test02(String str) throws IOException {
-        File file=new File(str);
-        FileReader stream = new FileReader(file);
-        BufferedReader reader = new BufferedReader(stream);
-        String s = reader.readLine();
-        int ind =0;
-        while (s!=null){
-            Map<String, Object> m = new LinkedHashMap<>();
-         String[] s1 = s.split("\t");
-        YbYpzlml ypzlml=new YbYpzlml();
+//    /*药品对码*/
+//    @Override
+//    public  void test02(String str) throws IOException {
+//        File file=new File(str);
+//        FileReader stream = new FileReader(file);
+//        BufferedReader reader = new BufferedReader(stream);
+//        String s = reader.readLine();
+//        int ind =0;
+//        while (s!=null){
+//            Map<String, Object> m = new LinkedHashMap<>();
+//            String[] s1 = s.split("\t");
+//            YbYpzlml ypzlml=new YbYpzlml();
+//
+//            ypzlml.setBrxz(BigDecimal.valueOf(2));
+//            ypzlml.setTcqbm("市医保");
+//            ypzlml.setYbbm("0");
+//            ypzlml.setTyzwmc(s1[7]);
+//            ypzlml.setSpmc(s1[3]);
+//            ypzlml.setTyywmc(s1[6]);
+//            ypzlml.setSfdl("药品");
+//            ypzlml.setSfxl(s1[9]);
+//            ypzlml.setSfxmdj(s1[11]);
+//            ypzlml.setJx(s1[9]);
+//            ypzlml.setGg(s1[13]);
+//            ypzlml.setSccj(s1[53]);
+//            ypzlml.setTybz(s1[78]);
+//            ypzlml.setGjbm(s1[0]);
+//            ypzlml.setPzwh(s1[61]);
+//
+//            // System.out.println("开始写入数据");
+//            ybYpzlmlDao.insertSelective(ypzlml);
+//            // System.out.println(ypzlml.toString());
+//            s = reader.readLine();
+//        }
+//
+//
+//    }
 
-                ypzlml.setBrxz(BigDecimal.valueOf(2));
-                ypzlml.setTcqbm("市医保");
-                ypzlml.setYbbm("0");
-                ypzlml.setTyzwmc(s1[7]);
-                ypzlml.setSpmc(s1[3]);
-                ypzlml.setTyywmc(s1[6]);
-                ypzlml.setSfdl("药品");
-                ypzlml.setSfxl(s1[9]);
-                ypzlml.setSfxmdj(s1[11]);
-                ypzlml.setJx(s1[9]);
-                ypzlml.setGg(s1[13]);
-                ypzlml.setSccj(s1[53]);
-                ypzlml.setTybz(s1[78]);
-                ypzlml.setGjbm(s1[0]);
-                ypzlml.setPzwh(s1[61]);
-
-               // System.out.println("开始写入数据");
-                ybYpzlmlDao.insertSelective(ypzlml);
-               // System.out.println(ypzlml.toString());
-                s = reader.readLine();
-            }
 
 
-    }
-
-
-
-    /*诊疗*/
+ /*   *//*诊疗*//*
     public  void test03(String str) throws IOException {
         File file=new File(str);
         FileReader stream = new FileReader(file);
@@ -431,8 +417,9 @@ public class YbServiceImpl implements YBService {
 
 
     }
+*/
 
-
+/*
     //医保对账
     @Override
     public void ybdz(String ybjgid,String yblx) {
@@ -442,9 +429,10 @@ public class YbServiceImpl implements YBService {
         System.out.println(list);
 
     }
+*/
 
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         YbServiceImpl ex=new YbServiceImpl();
         String path="E:\\202108106785348076776592002.txt";
         try {
@@ -452,5 +440,5 @@ public class YbServiceImpl implements YBService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
