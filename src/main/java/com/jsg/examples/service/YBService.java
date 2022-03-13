@@ -12,8 +12,5 @@ public interface YBService {
 
     Object query_ZYMZCX(YBLogEntity ybLogEntity);
     CommonResult query_DRZYMZCX(JSONObject jsonObject);
-    void test02(String str) throws IOException;
-
-    void ybdz(String ybjgid,String yblx);
 
 }

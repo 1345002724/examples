@@ -164,7 +164,7 @@ public class YbController {
             return obj;
     }
 
-    @RequestMapping("/ypzlmx")
+/*    @RequestMapping("/ypzlmx")
     public void ypzlmx(){
         try {
             ybService.test02("E:\\202108106785348076776592002.txt");
@@ -172,12 +172,12 @@ public class YbController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 
-    //医保对账不不和处理数据
-    @RequestMapping("/ybdz")
-    public  void ybdz(String ybjgid,String yblx){
-        ybService.ybdz("","");
-    }
+//    //医保对账不不和处理数据
+//    @RequestMapping("/ybdz")
+//    public  void ybdz(String ybjgid,String yblx){
+//        ybService.ybdz("","");
+//    }
 }

@@ -25,8 +25,8 @@ import static com.jsg.examples.utils.Http_Yb_Test.doPost_xxcf;
 @Configuration
 public class TokenTask {
 
-    public String token;
-    public String cookie;
+    public static String token;
+    public static String cookie;
     private ScheduledExecutorService executor= null;
 
     @PostConstruct
