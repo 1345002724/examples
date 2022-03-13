@@ -6,12 +6,12 @@ package com.jsg.examples.entity;
  * @param <T>
  */
 
-public class CommonResult<T> {
+public class CommonResult {
     private Integer code;  //状态码
     private String  message; //状态码信息
-    private T       data;   //具体数据
+    private Object       data;   //具体数据
 
-    public CommonResult(Integer code1, String message1, T data1){
+    public CommonResult(Integer code1, String message1, Object data1){
         this.code=code1;
         this.message=message1;
         this.data=data1;
@@ -39,13 +39,11 @@ public class CommonResult<T> {
         this.message = message;
     }
 
-    public T getData() {
+    public Object getData() {
         return data;
     }
 
-    public void setData(T data) {
+    public void setData(Object data) {
         this.data = data;
     }
-
-
 }

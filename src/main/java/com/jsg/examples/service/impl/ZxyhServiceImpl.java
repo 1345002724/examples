@@ -1,6 +1,6 @@
 package com.jsg.examples.service.impl;
 
-import com.jsg.examples.constants.BaseConstants;
+import com.jsg.examples.config.constants.BaseConstants;
 import com.jsg.examples.entity.RybmEntity;
 import com.jsg.examples.service.ZxyhService;
 import org.slf4j.Logger;

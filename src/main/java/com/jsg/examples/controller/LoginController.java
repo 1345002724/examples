@@ -1,6 +1,6 @@
 package com.jsg.examples.controller;
 
-import com.jsg.examples.constants.BaseConstants;
+import com.jsg.examples.config.constants.BaseConstants;
 import com.jsg.examples.dao.RybmDao;
 import com.jsg.examples.entity.CommonResult;
 import com.jsg.examples.entity.RybmEntity;

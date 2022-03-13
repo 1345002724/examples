@@ -20,4 +20,4 @@ spring:
     type: redis
 
 time_out: 60 #登录超时时间设置 (单位:分钟)
-isLogin: true #配置是否需要登录验证
+isLogin: false #配置是否需要登录验证

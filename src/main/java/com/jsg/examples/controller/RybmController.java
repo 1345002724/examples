@@ -1,6 +1,6 @@
 package com.jsg.examples.controller;
 
-import com.jsg.examples.constants.BaseConstants;
+import com.jsg.examples.config.constants.BaseConstants;
 import com.jsg.examples.dao.RybmDao;
 import com.jsg.examples.entity.CommonResult;
 import com.jsg.examples.entity.QueryInfoEntity;
@@ -9,7 +9,6 @@ import com.jsg.examples.service.RybmService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

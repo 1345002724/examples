@@ -1,4 +1,4 @@
-package com.jsg.examples.constants;
+package com.jsg.examples.config.constants;
 
 
 
@@ -10,7 +10,7 @@ public interface BaseConstants {
      */
     String MESSAGE_SUCCESS  = "成功";
     String MESSAGE_FAIL  = "失败";
-    String CODE_SUCCESS  = "200";   //请求成功
+    Integer CODE_SUCCESS  = 200;   //请求成功
     String CODE_FAIL  = "400";  //请求失败
     Integer CODE_LOGIN=401;  //用户未登录
 
