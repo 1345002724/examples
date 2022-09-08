@@ -29,10 +29,8 @@ public class HomeServiceImpl implements HomeService {
                 if(res1.get(i).getMkbm1().equals(res2.get(j).getMkbm1())){
 
                     res1.get(i).getChildren().add(res2.get(j));
-
                     }
                 }
-
             }
 
 

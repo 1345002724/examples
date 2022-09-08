@@ -12,7 +12,6 @@ public class UserProxy {
 
     @Before(value ="execution(* com.jsg.examples.spring.aop.UserImpl.add1(..))")
     public void before(){
-
         System.out.println("before之前执行");
     }
 
